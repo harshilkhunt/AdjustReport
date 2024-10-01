@@ -1,0 +1,124 @@
+import api_call as ac
+import streamlit as st
+import pandas as pd
+from datetime import datetime, timedelta, date
+import plotly.express as px
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+
+
+today = datetime.today().date()
+today_date = today.strftime('%Y-%m-%d')
+lst_token =["f56a8zluprsw","1gymy6f2kfeo","mf30wj2dii9s"]
+df_revenue = ac.fetch_adjust_report('"f56a8zluprsw","1gymy6f2kfeo","mf30wj2dii9s"',f"2024-04-01:{today_date}", "day,country,app","installs,revenue,ad_revenue,cost,ecpi_all,daus,paid_installs,arpdau,arpdau_ad,arpdau_iap","revenue")
+df_revenue[['installs', 'revenue', 'ad_revenue', 'cost', 'ecpi_all', 'daus', 'paid_installs', 'arpdau', 'arpdau_ad','arpdau_iap']] = df_revenue[['installs', 'revenue', 'ad_revenue', 'cost', 'ecpi_all', 'daus', 'paid_installs', 'arpdau', 'arpdau_ad','arpdau_iap']].astype(float)
+df_revenue['total_revenue'] = df_revenue['revenue'] + df_revenue['ad_revenue']
+df_revenue['day'] = pd.to_datetime(df_revenue['day'])
+
+
+
+
+startDate = pd.to_datetime(df_revenue["day"]).min()
+endDate = pd.to_datetime(df_revenue["day"]).max()
+
+
+col1, col2 = st.columns((2))
+with col1:
+    date1 = pd.to_datetime(st.date_input("Start Date", startDate))
+
+with col2:
+    date2 = pd.to_datetime(st.date_input("End Date", endDate))
+
+
+c1, c2 = st.columns((2))
+with c1:
+    options_app = st.multiselect("Select the App",df_revenue['app'].unique(),df_revenue['app'].unique()[0])
+with c2:
+    pass
+
+
+
+if date1 > date2:
+    st.write("Enter correct date")
+else:
+    st.write("correct date")
+
+# st.dataframe(df_revenue)
+
+df_filter = df_revenue[(df_revenue["day"] >= date1) & (df_revenue["day"] <= date2)].copy()
+df_filter =df_filter[df_filter['app'].isin(options_app)]
+df_filter = df_filter.groupby(by = 'day')[['installs','revenue','ad_revenue','cost','daus','paid_installs','total_revenue']].sum()
+
+
+cl1,cl2 = st.columns([2,1])
+with cl1:
+    st.subheader("Chart")
+    fig = px.line(x=df_filter.index, y=df_filter['total_revenue'], labels=dict(x="Day", y="Total Revenue", color="Time Period"),text=df_filter['total_revenue'].round())
+    fig.add_bar(x=df_filter.index, y=df_filter['cost'],text=df_filter['cost'].round())
+    st.plotly_chart(fig, use_container_width=True)
+
+with cl2:
+    st.subheader(f"Table for {options_app}")
+    st.dataframe(df_filter)
+
+
+cl_3_1,cl_3_2 = st.columns([1,1])
+with cl_3_1:
+    st.subheader("ARPDAU")
+    option_country = st.selectbox("Select Country",df_revenue['country'].unique())
+    option_app = st.selectbox("Select the App",df_revenue['app'].unique())
+    df_arpdau = df_revenue[(df_revenue["day"] >= date1) & (df_revenue["day"] <= date2)].copy()
+    df_arpdau = df_arpdau[(df_arpdau['app'] == option_app) & (df_arpdau['country'] == option_country)]
+    df_arpdau  = df_arpdau.sort_values(by='day', ascending=True)
+
+    # st.write(df_arpdau)
+    # Create a figure
+    fig = go.Figure()
+
+    # Add first line
+    fig.add_trace(go.Scatter(x=df_arpdau['day'], y=df_arpdau['arpdau'], mode='lines', name='Total ARPDAU'))
+
+    # Add second line
+    fig.add_trace(go.Scatter(x=df_arpdau['day'], y=df_arpdau['arpdau_ad'], mode='lines', name='ARPDAU Ads'))
+
+    # Add third line
+    fig.add_trace(go.Scatter(x=df_arpdau['day'], y=df_arpdau['arpdau_iap'], mode='lines', name='ARPDAY IAPs'))
+
+    # Update layout
+    fig.update_layout(title='ARPDAU',
+                      xaxis_title='DAY',
+                      yaxis_title='ARPDAU')
+    st.plotly_chart(fig, use_container_width=True)
+
+with cl_3_2:
+    st.subheader("Install/DAU")
+    # Create a figure
+    # Create figure with secondary y-axis
+    fig = make_subplots(specs=[[{"secondary_y": True}]])
+
+    # Add first line (primary Y-axis)
+    fig.add_trace(go.Scatter(x=df_arpdau['day'], y=df_arpdau['installs'], mode='lines', name='installs'), secondary_y=False)
+
+    # Add second line (primary Y-axis)
+    fig.add_trace(go.Scatter(x=df_arpdau['day'], y=df_arpdau['paid_installs'], mode='lines', name='paid_installs'), secondary_y=False)
+
+    # Add third line (secondary Y-axis)
+    fig.add_trace(go.Scatter(x=df_arpdau['day'], y=df_arpdau['daus'], mode='lines', name='daus'),secondary_y=False)
+
+    fig.add_trace(go.Scatter(x=df_arpdau['day'], y=df_arpdau['installs']/df_arpdau['daus']*100, mode='lines', name='Installs/Daus (Secondary Y-axis)'),secondary_y=True)
+
+    # Update layout
+    fig.update_layout(title='Installs / Daus',
+                      xaxis_title='Day',
+                      yaxis_title='Installs,Daus,Paid Installs',
+                      yaxis2_title='Ratio Installs/Daus')
+    st.plotly_chart(fig, use_container_width=True)
+
+    fig_ecpi = go.Figure()
+
+    # Add first line
+    fig_ecpi.add_trace(go.Scatter(x=df_arpdau['day'], y=df_arpdau['ecpi_all'], mode='lines', name='ecpi'))
+    fig_ecpi.update_layout(title='eCPI',
+                      xaxis_title='Day',
+                      yaxis_title='ecpi')
+    st.plotly_chart(fig_ecpi, use_container_width=True)

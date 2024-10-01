@@ -1,0 +1,431 @@
+country,app,installs,daus,retention_rate_d7,roas_d7,cost
+United States,Merge Fever,1230,1607.25,0.233,0.6033,3877.2392
+India,Merge Fever,1154,1328.875,0.0843,0.9968,60.4175
+Indonesia,Merge Fever,626,661.75,0.1743,0.366,118.4024
+United Kingdom,Merge Fever,517,718.75,0.2245,0.8285,1499.9633
+Philippines,Merge Fever,464,312.75,0.0725,0.2201,128.15
+Germany,Merge Fever,438,668.375,0.2478,0.6523,676.8848
+United States,Merge HomeTown,394,361.0,0.1154,0.3425,544.865
+Malaysia,Merge Fever,361,374.625,0.1335,0.6438,164.6714
+Thailand,Merge Fever,318,407.75,0.1877,0.5186,127.0059
+Egypt,Merge Fever,289,454.5,0.2062,0.2526,19.705
+Japan,Merge Fever,266,613.875,0.1898,0.7033,393.2498
+Brazil,Merge Fever,250,469.875,0.126,1.2943,16.9216
+Viet Nam,Merge Fever,218,258.125,0.1623,0.4451,42.7718
+South Africa,Merge Fever,211,217.75,0.1495,0.4023,90.8888
+France,Merge Fever,150,241.875,0.2384,0.0,0.0
+Mexico,Merge Fever,148,246.75,0.1783,1.0434,51.5251
+Australia,Merge Fever,139,109.75,0.2028,0.653,331.6222
+South Korea,Merge Fever,126,169.125,0.1984,0.0,0.0
+India,Merge HomeTown,108,88.375,0.0833,0.0,0.0
+Netherlands,Merge Fever,106,157.75,0.2056,0.5698,117.5206
+United States,Tales and Dragon,100,111.375,0.14,0.0,0.0
+Spain,Merge Fever,90,194.75,0.1778,0.0,0.0
+Canada,Merge HomeTown,87,102.625,0.0753,0.2517,132.8708
+Canada,Merge Fever,81,191.0,0.2921,0.728,136.3816
+Italy,Merge Fever,80,127.75,0.2,0.0,0.0
+Czech Republic,Merge Fever,78,109.875,0.1282,1.4281,57.839
+"Taiwan, Province Of China",Merge Fever,77,115.125,0.1728,0.2152,112.0292
+Brazil,Merge HomeTown,75,70.25,0.04,0.0,0.0
+Poland,Merge Fever,74,96.0,0.2267,0.0,0.0
+France,Merge HomeTown,69,96.5,0.2174,0.0,0.0
+Morocco,Merge Fever,66,75.75,0.0909,0.1844,7.1989
+Turkey,Merge Fever,64,74.25,0.125,0.0,0.0
+United Kingdom,Merge HomeTown,62,81.125,0.1129,0.0,0.0
+Germany,Merge HomeTown,61,103.75,0.1803,0.0,0.0
+Lebanon,Merge Fever,60,87.875,0.1613,0.1017,7.4397
+Chile,Merge Fever,58,106.25,0.1667,2.4314,21.659
+Colombia,Merge Fever,58,88.25,0.1,0.2662,8.5401
+Ukraine,Merge Fever,57,64.375,0.2982,0.0,0.0
+Germany,Tales and Dragon,55,61.375,0.1818,0.0,0.0
+Italy,Merge HomeTown,52,55.5,0.1346,0.0,0.0
+Pakistan,Merge Fever,52,24.5,0.0,0.0,0.0
+Saudi Arabia,Merge Fever,51,66.75,0.1321,0.3932,41.4471
+Sweden,Merge Fever,50,77.75,0.26,1.0876,57.7422
+Argentina,Merge Fever,48,61.875,0.2083,0.0,0.0
+Indonesia,Merge HomeTown,43,45.75,0.1163,0.0,0.0
+Ireland,Merge Fever,43,42.375,0.1591,0.4049,89.3361
+Israel,Merge Fever,43,61.5,0.1628,0.1929,36.14
+Singapore,Merge Fever,43,61.5,0.1628,0.7674,77.1165
+Spain,Merge HomeTown,43,48.5,0.093,0.0,0.0
+Bulgaria,Merge Fever,42,59.125,0.2093,0.2813,34.9615
+Greece,Merge Fever,42,69.875,0.2381,0.0,0.0
+Thailand,Merge HomeTown,42,35.0,0.1429,0.0,0.0
+Viet Nam,Merge HomeTown,42,26.75,0.1429,0.0,0.0
+New Zealand,Merge Fever,39,49.0,0.2195,0.1342,102.483
+Peru,Merge Fever,38,62.25,0.3077,0.6565,9.3806
+Canada,Tales and Dragon,37,26.25,0.0732,0.0769,166.2461
+Turkey,Merge HomeTown,34,40.375,0.0882,0.0,0.0
+United Arab Emirates,Merge Fever,34,35.25,0.0294,0.1049,36.7157
+"Iran, Islamic Republic Of",Merge Fever,32,62.375,0.1212,0.0,0.0
+Finland,Merge Fever,31,32.875,0.1935,0.602,23.6511
+Bangladesh,Merge Fever,30,16.5,0.1,0.0,0.0
+France,Tales and Dragon,30,34.625,0.1,0.0,0.0
+Romania,Merge Fever,30,39.75,0.2,0.0,0.0
+Ukraine,Merge HomeTown,30,25.5,0.1333,0.0,0.0
+Belgium,Merge Fever,29,49.875,0.3103,0.0,0.0
+Brazil,Tales and Dragon,28,16.75,0.1429,0.0,0.0
+Denmark,Merge Fever,28,42.75,0.2,0.4563,34.7705
+Portugal,Merge Fever,28,41.375,0.1786,0.0,0.0
+India,Tales and Dragon,27,17.5,0.1481,0.0,0.0
+Kenya,Merge Fever,27,23.375,0.0357,0.1033,3.4072
+Dominican Republic,Merge Fever,25,30.0,0.1111,1.0893,3.1491
+United Kingdom,Tales and Dragon,25,23.875,0.12,0.0,0.0
+Poland,Merge HomeTown,24,33.625,0.2083,0.0,0.0
+Portugal,Merge HomeTown,23,21.625,0.0417,0.0,0.0
+South Korea,Merge HomeTown,22,33.25,0.1818,0.0,0.0
+Iraq,Merge Fever,21,19.5,0.1429,0.0,0.0
+Hong Kong,Merge Fever,20,45.125,0.1429,0.3914,35.403
+Norway,Merge Fever,20,39.625,0.1,0.1138,45.4517
+Australia,Merge HomeTown,19,28.25,0.15,0.0,0.0
+Iraq,Merge HomeTown,19,13.625,0.0526,0.0,0.0
+Japan,Merge HomeTown,19,17.0,0.1579,0.0,0.0
+Jordan,Merge Fever,19,26.375,0.1,0.3161,2.2298
+Netherlands,Merge HomeTown,19,32.5,0.2632,0.0,0.0
+Guatemala,Merge Fever,18,27.875,0.3684,0.2933,2.883
+Kuwait,Merge Fever,18,14.75,0.1111,0.1997,12.2204
+Philippines,Merge HomeTown,18,14.0,0.2222,0.0,0.0
+Switzerland,Merge Fever,18,37.75,0.3158,0.4275,40.3752
+Hungary,Merge HomeTown,17,21.125,0.1176,0.0,0.0
+Puerto Rico,Merge Fever,17,24.75,0.1667,0.344,10.2663
+South Africa,Merge HomeTown,17,17.25,0.1765,0.0,0.0
+Egypt,Merge HomeTown,16,15.125,0.125,0.0,0.0
+Poland,Tales and Dragon,16,25.0,0.125,0.0,0.0
+Czech Republic,Merge HomeTown,15,12.625,0.0667,0.0,0.0
+Honduras,Merge Fever,15,17.0,0.2667,1.2332,1.7352
+Italy,Tales and Dragon,15,11.75,0.2,0.0,0.0
+Romania,Merge HomeTown,15,15.625,0.0667,0.0,0.0
+Algeria,Merge Fever,14,13.125,0.0714,0.0,0.0
+Belarus,Merge Fever,14,16.0,0.3571,0.0,0.0
+Serbia,Merge Fever,14,22.5,0.1429,0.0,0.0
+Austria,Merge Fever,13,21.625,0.2308,0.0,0.0
+Costa Rica,Merge Fever,13,31.25,0.0769,0.3281,5.433
+Mexico,Merge HomeTown,13,6.375,0.0,0.0,0.0
+Pakistan,Merge HomeTown,13,4.5,0.0,0.0,0.0
+Belgium,Merge HomeTown,12,21.75,0.0,0.0,0.0
+Kazakhstan,Merge Fever,12,6.5,0.0833,0.0,0.0
+Nepal,Merge Fever,12,7.25,0.0769,0.1326,0.5227
+"Taiwan, Province Of China",Merge HomeTown,12,12.25,0.1667,0.0,0.0
+Ukraine,Tales and Dragon,12,9.625,0.1667,0.0,0.0
+Denmark,Merge HomeTown,11,7.5,0.0909,0.0,0.0
+Ecuador,Merge Fever,11,10.25,0.0909,0.0,0.0
+El Salvador,Merge Fever,11,23.0,0.1667,0.4045,1.7825
+Hungary,Merge Fever,11,21.75,0.1818,0.0,0.0
+Myanmar,Merge Fever,11,9.125,0.0,0.0,0.0
+Slovakia,Merge Fever,11,21.5,0.0909,0.0,0.0
+Spain,Tales and Dragon,11,17.75,0.1818,0.0,0.0
+"Venezuela, Bolivarian Republic Of",Merge Fever,11,11.25,0.1818,0.0,0.0
+Bangladesh,Merge HomeTown,10,4.375,0.0,0.0,0.0
+Greece,Merge HomeTown,10,13.375,0.0,0.0,0.0
+Malaysia,Merge HomeTown,10,17.5,0.3,0.0,0.0
+Oman,Merge Fever,10,18.75,0.1,0.4305,4.8667
+Serbia,Merge HomeTown,10,8.25,0.4,0.0,0.0
+South Korea,Tales and Dragon,10,8.875,0.0,0.0,0.0
+Austria,Merge HomeTown,9,16.875,0.0,0.0,0.0
+Indonesia,Tales and Dragon,9,7.0,0.2222,0.0,0.0
+"Iran, Islamic Republic Of",Merge HomeTown,9,8.625,0.0,0.0,0.0
+Japan,Tales and Dragon,9,8.0,0.0,0.0,0.0
+Russia,Merge Fever,9,21.5,0.2222,0.0,0.0
+Australia,Tales and Dragon,8,10.125,0.25,0.0,0.0
+Belarus,Merge HomeTown,8,9.125,0.125,0.0,0.0
+Croatia,Merge Fever,8,12.625,0.5,0.0,0.0
+Cuba,Merge Fever,8,18.75,0.125,0.0,0.0
+Cyprus,Merge Fever,8,14.125,0.0,0.0064,10.0874
+Ethiopia,Merge Fever,8,4.75,0.0,0.0,0.0
+Malta,Merge Fever,8,5.125,0.0,0.4063,4.0667
+Mauritius,Merge Fever,8,9.125,0.0,0.0768,1.9588
+Nigeria,Merge Fever,8,8.0,0.125,0.0,0.0
+Thailand,Tales and Dragon,8,10.25,0.375,0.0,0.0
+Turkey,Tales and Dragon,8,9.125,0.0,0.0,0.0
+Uzbekistan,Merge Fever,8,12.125,0.0,0.0,0.0
+Azerbaijan,Merge Fever,7,3.25,0.2857,0.0,0.0
+Bulgaria,Merge HomeTown,7,9.625,0.4286,0.0,0.0
+Cambodia,Merge Fever,7,5.125,0.2857,0.0,0.0
+Romania,Tales and Dragon,7,9.5,0.4286,0.0,0.0
+Sri Lanka,Merge Fever,7,3.0,0.1429,0.0,0.0
+Algeria,Merge HomeTown,6,3.875,0.1667,0.0,0.0
+Austria,Tales and Dragon,6,8.375,0.3333,0.0,0.0
+Azerbaijan,Merge HomeTown,6,2.25,0.1667,0.0,0.0
+Bahrain,Merge Fever,6,13.0,0.0,0.0092,5.2024
+Bosnia & Herzegovina,Merge Fever,6,4.875,0.1667,0.0,0.0
+Qatar,Merge Fever,6,8.5,0.1429,0.1028,6.0724
+Switzerland,Merge HomeTown,6,7.125,0.1667,0.0,0.0
+Syrian Arab Republic,Merge HomeTown,6,1.375,0.0,0.0,0.0
+Uruguay,Merge Fever,6,11.625,0.3333,0.0,0.0
+Viet Nam,Tales and Dragon,6,7.75,0.1667,0.0,0.0
+Albania,Merge HomeTown,5,3.0,0.2,0.0,0.0
+Argentina,Merge HomeTown,5,10.0,0.0,0.0,0.0
+"Bolivia, Plurinational State Of",Merge Fever,5,5.75,0.0,0.0,0.0
+Bosnia & Herzegovina,Merge HomeTown,5,2.375,0.0,0.0,0.0
+Chile,Merge HomeTown,5,9.0,0.0,0.0,0.0
+Colombia,Merge HomeTown,5,4.125,0.2,0.0,0.0
+Egypt,Tales and Dragon,5,4.125,0.0,0.0,0.0
+Georgia,Merge Fever,5,3.0,0.2,0.0,0.0
+Iraq,Tales and Dragon,5,2.25,0.2,0.0,0.0
+Jamaica,Merge Fever,5,3.875,0.4,0.0,0.0
+Jordan,Merge HomeTown,5,2.5,0.0,0.0,0.0
+Kazakhstan,Merge HomeTown,5,8.0,0.2,0.0,0.0
+Kazakhstan,Tales and Dragon,5,2.875,0.2,0.0,0.0
+Lebanon,Merge HomeTown,5,3.125,0.0,0.0,0.0
+Lithuania,Merge Fever,5,9.375,0.2,0.0,0.0
+"Macedonia, The Former Yugoslav Republic Of",Merge Fever,5,5.375,0.4,0.0,0.0
+Malaysia,Tales and Dragon,5,2.875,0.0,0.0,0.0
+Moldova,Merge Fever,5,5.375,0.2,0.0,0.0
+New Zealand,Tales and Dragon,5,3.75,0.2,0.0,0.0
+Panama,Merge Fever,5,2.5,0.0,0.0,0.0
+Papua New Guinea,Merge Fever,5,9.875,0.2,0.0351,0.5578
+Slovenia,Merge Fever,5,7.875,0.4,0.0,0.0
+Syrian Arab Republic,Merge Fever,5,9.75,0.6,0.0,0.0
+Trinidad And Tobago,Merge Fever,5,3.125,0.4,0.0,0.0
+United Arab Emirates,Merge HomeTown,5,2.125,0.0,0.0,0.0
+Belarus,Tales and Dragon,4,4.625,0.5,0.0,0.0
+Belgium,Tales and Dragon,4,8.875,0.0,0.0,0.0
+Cambodia,Merge HomeTown,4,1.875,0.0,0.0,0.0
+Chile,Tales and Dragon,4,1.75,0.0,0.0,0.0
+Cote d'Ivoire,Merge Fever,4,3.5,0.0,0.0,0.0
+Cuba,Merge HomeTown,4,1.625,0.0,0.0,0.0
+Finland,Tales and Dragon,4,1.75,0.0,0.0,0.0
+French Polynesia,Merge Fever,4,1.5,0.0,0.0,0.0
+Greece,Tales and Dragon,4,2.75,0.0,0.0,0.0
+Guyana,Merge Fever,4,2.125,0.25,0.0,0.0
+Ireland,Merge HomeTown,4,1.875,0.0,0.0,0.0
+Lao People's Democratic Republic,Merge Fever,4,4.375,0.0,0.0,0.0
+Latvia,Merge Fever,4,6.0,0.75,0.0,0.0
+Moldova,Merge HomeTown,4,3.875,0.25,0.0,0.0
+Netherlands,Tales and Dragon,4,12.0,0.0,0.0,0.0
+Norway,Tales and Dragon,4,2.625,0.25,0.0,0.0
+Philippines,Tales and Dragon,4,1.375,0.0,0.0,0.0
+Portugal,Tales and Dragon,4,5.75,0.25,0.0,0.0
+Reunion,Merge Fever,4,6.625,0.0,0.0,0.0
+Russia,Merge HomeTown,4,5.0,0.25,0.0,0.0
+Saudi Arabia,Merge HomeTown,4,6.25,0.25,0.0,0.0
+Slovakia,Tales and Dragon,4,2.625,0.25,0.0,0.0
+"Taiwan, Province Of China",Tales and Dragon,4,5.125,0.25,0.0,0.0
+Tunisia,Merge Fever,4,6.625,0.0,0.0,0.0
+Albania,Merge Fever,3,1.5,0.3333,0.0,0.0
+Algeria,Tales and Dragon,3,3.125,0.3333,0.0,0.0
+Argentina,Tales and Dragon,3,2.375,0.0,0.0,0.0
+Armenia,Merge Fever,3,0.625,0.0,0.0,0.0
+Brunei Darussalam,Merge Fever,3,9.875,0.0,0.0,0.0
+China,Merge Fever,3,1.875,0.0,0.0,0.0
+Cuba,Tales and Dragon,3,0.75,0.0,0.0,0.0
+Estonia,Merge Fever,3,3.5,0.0,0.0,0.0
+Hong Kong,Merge HomeTown,3,3.5,0.0,0.0,0.0
+Hong Kong,Tales and Dragon,3,1.5,0.3333,0.0,0.0
+Iceland,Merge Fever,3,2.875,0.0,0.0,0.0
+Luxembourg,Merge Fever,3,4.375,0.3333,0.0,0.0
+Martinique,Merge Fever,3,2.875,0.0,0.0,0.0
+Mexico,Tales and Dragon,3,3.625,0.3333,0.0,0.0
+New Zealand,Merge HomeTown,3,5.875,0.6667,0.0,0.0
+"Palestinian Territory, Occupied",Merge Fever,3,2.625,0.0,0.0,0.0
+Senegal,Merge Fever,3,0.875,0.0,0.0,0.0
+Sweden,Tales and Dragon,3,6.125,0.0,0.0,0.0
+Uzbekistan,Merge HomeTown,3,4.25,0.3333,0.0,0.0
+"Venezuela, Bolivarian Republic Of",Merge HomeTown,3,2.125,0.0,0.0,0.0
+Afghanistan,Merge HomeTown,2,0.5,0.0,0.0,0.0
+Costa Rica,Merge HomeTown,2,1.375,0.0,0.0,0.0
+Croatia,Merge HomeTown,2,2.375,1.0,0.0,0.0
+Czech Republic,Tales and Dragon,2,5.25,0.0,0.0,0.0
+Denmark,Tales and Dragon,2,1.625,0.0,0.0,0.0
+Ecuador,Merge HomeTown,2,0.625,0.0,0.0,0.0
+El Salvador,Merge HomeTown,2,0.5,0.0,0.0,0.0
+Finland,Merge HomeTown,2,3.625,0.5,0.0,0.0
+Haiti,Merge Fever,2,0.5,0.0,0.0,0.0
+Hungary,Tales and Dragon,2,7.125,0.0,0.0,0.0
+"Iran, Islamic Republic Of",Tales and Dragon,2,2.875,0.0,0.0,0.0
+Libya,Merge Fever,2,2.625,0.0,0.0,0.0
+Libya,Tales and Dragon,2,0.625,0.0,0.0,0.0
+Lithuania,Merge HomeTown,2,2.625,0.0,0.0,0.0
+Mongolia,Merge Fever,2,0.875,0.5,0.0,0.0
+Mozambique,Merge Fever,2,3.125,0.0,0.1345,0.3019
+Nepal,Merge HomeTown,2,0.625,0.0,0.0,0.0
+New Caledonia,Merge Fever,2,0.5,0.5,0.0,0.0
+Oman,Merge HomeTown,2,1.125,0.5,0.0,0.0
+Pakistan,Tales and Dragon,2,0.375,0.0,0.0,0.0
+Paraguay,Merge Fever,2,1.125,0.0,0.0,0.0
+Peru,Merge HomeTown,2,1.5,0.0,0.0,0.0
+Puerto Rico,Tales and Dragon,2,0.5,0.0,0.0,0.0
+Singapore,Merge HomeTown,2,4.625,0.0,0.0,0.0
+Slovenia,Merge HomeTown,2,1.75,0.0,0.0,0.0
+South Africa,Tales and Dragon,2,4.75,0.0,0.0,0.0
+Sri Lanka,Merge HomeTown,2,1.5,0.5,0.0,0.0
+Sweden,Merge HomeTown,2,11.5,0.0,0.0,0.0
+United Arab Emirates,Tales and Dragon,2,1.25,0.5,0.0,0.0
+Zimbabwe,Merge Fever,2,3.875,0.5,0.4843,0.4801
+Afghanistan,Merge Fever,1,0.125,0.0,0.0,0.0
+Albania,Tales and Dragon,1,0.875,1.0,0.0,0.0
+American Samoa,Merge Fever,1,0.875,0.0,0.018,0.2161
+Armenia,Merge HomeTown,1,1.25,0.0,0.0,0.0
+Aruba,Merge Fever,1,0.75,0.0,0.0,0.0
+Azerbaijan,Tales and Dragon,1,0.5,0.0,0.0,0.0
+Bangladesh,Tales and Dragon,1,0.875,0.0,0.0,0.0
+Barbados,Merge HomeTown,1,0.375,0.0,0.0,0.0
+Benin,Merge Fever,1,0.625,0.0,0.0,0.0
+Bhutan,Merge Fever,1,0.125,0.0,0.0,0.0
+Bosnia & Herzegovina,Tales and Dragon,1,0.25,0.0,0.0,0.0
+Brunei Darussalam,Merge HomeTown,1,0.5,0.0,0.0,0.0
+Cameroon,Merge Fever,1,1.375,0.0,0.0,0.0
+Chad,Merge Fever,1,0.375,0.0,0.0,0.0
+Cyprus,Merge HomeTown,1,2.625,1.0,0.0,0.0
+Cyprus,Tales and Dragon,1,0.25,0.0,0.0,0.0
+Democratic Republic Of Congo,Merge Fever,1,0.625,0.0,0.0,0.0
+Dominica,Merge HomeTown,1,0.125,0.0,0.0,0.0
+Dominican Republic,Merge HomeTown,1,0.75,1.0,0.0,0.0
+East Timor,Merge Fever,1,0.125,0.0,0.0,0.0
+El Salvador,Tales and Dragon,1,0.375,0.0,0.0,0.0
+Fiji,Merge Fever,1,0.25,0.0,0.0,0.0
+Gabon,Merge Fever,1,0.75,1.0,0.0,0.0
+Guadeloupe,Merge Fever,1,0.75,0.0,0.0,0.0
+Guam,Merge Fever,1,3.375,0.0,0.2614,1.0561
+Guatemala,Merge HomeTown,1,1.25,0.0,0.0,0.0
+Guinea,Merge Fever,1,0.125,0.0,0.0,0.0
+Honduras,Merge HomeTown,1,0.25,0.0,0.0,0.0
+Ireland,Tales and Dragon,1,2.75,0.0,0.0,0.0
+Israel,Merge HomeTown,1,6.875,0.0,0.0,0.0
+Israel,Tales and Dragon,1,2.25,1.0,0.0,0.0
+Kyrgyzstan,Merge HomeTown,1,0.625,0.0,0.0,0.0
+Lao People's Democratic Republic,Merge HomeTown,1,0.125,0.0,0.0,0.0
+Latvia,Merge HomeTown,1,3.25,0.0,0.0,0.0
+Latvia,Tales and Dragon,1,0.25,0.0,0.0,0.0
+Lebanon,Tales and Dragon,1,0.625,0.0,0.0,0.0
+Libya,Merge HomeTown,1,0.5,0.0,0.0,0.0
+Luxembourg,Tales and Dragon,1,0.125,0.0,0.0,0.0
+"Macedonia, The Former Yugoslav Republic Of",Tales and Dragon,1,0.125,0.0,0.0,0.0
+Malawi,Tales and Dragon,1,0.125,0.0,0.0,0.0
+Maldives,Tales and Dragon,1,0.125,0.0,0.0,0.0
+Martinique,Merge HomeTown,1,0.125,0.0,0.0,0.0
+Mongolia,Merge HomeTown,1,0.375,0.0,0.0,0.0
+Montenegro,Merge Fever,1,1.125,0.0,0.0,0.0
+Montenegro,Tales and Dragon,1,0.5,1.0,0.0,0.0
+Morocco,Merge HomeTown,1,1.375,0.0,0.0,0.0
+Myanmar,Merge HomeTown,1,1.375,0.0,0.0,0.0
+Nauru,Merge Fever,1,0.375,0.0,0.0,0.0
+Nepal,Tales and Dragon,1,0.125,0.0,0.0,0.0
+Nicaragua,Merge Fever,1,1.25,0.0,0.0,0.0
+Norway,Merge HomeTown,1,2.75,0.0,0.0,0.0
+"Palestinian Territory, Occupied",Tales and Dragon,1,0.125,0.0,0.0,0.0
+Panama,Merge HomeTown,1,0.875,0.0,0.0,0.0
+Paraguay,Merge HomeTown,1,0.875,0.0,0.0,0.0
+Peru,Tales and Dragon,1,0.375,0.0,0.0,0.0
+Puerto Rico,Merge HomeTown,1,2.875,1.0,0.0,0.0
+Reunion,Merge HomeTown,1,0.875,1.0,0.0,0.0
+Reunion,Tales and Dragon,1,0.25,0.0,0.0,0.0
+Rwanda,Merge Fever,1,1.125,1.0,0.0,0.0
+Saudi Arabia,Tales and Dragon,1,0.75,0.0,0.0,0.0
+Serbia,Tales and Dragon,1,1.125,0.0,0.0,0.0
+Slovakia,Merge HomeTown,1,6.125,0.0,0.0,0.0
+Somalia,Merge Fever,1,0.25,0.0,0.0,0.0
+Sudan,Tales and Dragon,1,0.125,0.0,0.0,0.0
+Suriname,Merge Fever,1,0.5,0.0,0.0,0.0
+Switzerland,Tales and Dragon,1,2.5,0.0,0.0,0.0
+Syrian Arab Republic,Tales and Dragon,1,1.0,0.0,0.0,0.0
+Tajikistan,Merge HomeTown,1,0.125,0.0,0.0,0.0
+"Tanzania, United Republic Of",Merge Fever,1,0.875,0.0,0.0,0.0
+Tonga,Merge Fever,1,0.125,0.0,0.0,0.0
+Tonga,Merge HomeTown,1,0.375,0.0,0.0,0.0
+Tunisia,Merge HomeTown,1,0.75,0.0,0.0,0.0
+Uganda,Merge Fever,1,0.375,0.0,0.0,0.0
+Uruguay,Tales and Dragon,1,1.125,0.0,0.0,0.0
+Uzbekistan,Tales and Dragon,1,1.375,0.0,0.0,0.0
+Virgin Islands (US),Merge Fever,1,0.125,0.0,0.0,0.0
+Yemen,Merge HomeTown,1,0.375,0.0,0.0,0.0
+Andorra,Merge HomeTown,0,1.25,0.0,0.0,0.0
+Andorra,Tales and Dragon,0,0.125,0.0,0.0,0.0
+Angola,Merge Fever,0,1.375,0.0,0.0,0.0
+Armenia,Tales and Dragon,0,0.75,0.0,0.0,0.0
+Bahamas,Merge Fever,0,2.875,0.0,0.0,1.3248
+Bahamas,Merge HomeTown,0,0.25,0.0,0.0,0.0
+Barbados,Merge Fever,0,1.125,0.0,0.0,0.0
+Belize,Merge Fever,0,0.25,0.0,0.0,0.0
+Belize,Merge HomeTown,0,0.25,0.0,0.0,0.0
+Bermuda,Merge Fever,0,0.125,0.0,0.0,0.0
+Bhutan,Merge HomeTown,0,0.25,0.0,0.0,0.0
+"Bolivia, Plurinational State Of",Tales and Dragon,0,0.375,0.0,0.0,0.0
+Botswana,Merge Fever,0,0.875,0.0,0.0,0.0
+Bulgaria,Tales and Dragon,0,2.75,0.0,0.0,0.0
+Burkina Faso,Merge Fever,0,0.125,0.0,0.0,0.0
+Cambodia,Tales and Dragon,0,0.125,0.0,0.0,0.0
+Cameroon,Merge HomeTown,0,0.25,0.0,0.0,0.0
+Cape Verde,Merge Fever,0,0.375,0.0,0.0,0.0
+China,Merge HomeTown,0,0.125,0.0,0.0,0.0
+China,Tales and Dragon,0,0.125,0.0,0.0,0.0
+Colombia,Tales and Dragon,0,1.125,0.0,0.0,0.0
+Cook Islands,Merge Fever,0,0.125,0.0,0.0,0.0
+Costa Rica,Tales and Dragon,0,1.125,0.0,0.0,0.0
+Cote d'Ivoire,Merge HomeTown,0,0.125,0.0,0.0,0.0
+Croatia,Tales and Dragon,0,1.125,0.0,0.0,0.0
+Curacao,Merge Fever,0,0.875,0.0,0.0,0.0
+Democratic Republic Of Congo,Merge HomeTown,0,0.125,0.0,0.0,0.0
+Ecuador,Tales and Dragon,0,0.125,0.0,0.0,0.0
+Estonia,Merge HomeTown,0,0.625,0.0,0.0,0.0
+Estonia,Tales and Dragon,0,0.75,0.0,0.0,0.0
+French Guiana,Merge Fever,0,1.125,0.0,0.0,0.0
+French Polynesia,Tales and Dragon,0,0.25,0.0,0.0,0.0
+Gabon,Tales and Dragon,0,1.0,0.0,0.0,0.0
+Georgia,Merge HomeTown,0,2.375,0.0,0.0,0.0
+Ghana,Merge Fever,0,0.375,0.0,0.0,0.0
+Ghana,Merge HomeTown,0,0.25,0.0,0.0,0.0
+Greenland,Merge Fever,0,1.25,0.0,0.0,0.0
+Greenland,Tales and Dragon,0,0.125,0.0,0.0,0.0
+Grenada,Merge Fever,0,0.125,0.0,0.0,0.0
+Guadeloupe,Merge HomeTown,0,0.5,0.0,0.0,0.0
+Guadeloupe,Tales and Dragon,0,0.125,0.0,0.0,0.0
+Guam,Merge HomeTown,0,0.25,0.0,0.0,0.0
+Guam,Tales and Dragon,0,0.125,0.0,0.0,0.0
+Guernsey,Merge Fever,0,0.125,0.0,0.0,0.0
+Isle Of Man,Merge Fever,0,0.125,0.0,0.0,0.0
+Jamaica,Merge HomeTown,0,0.75,0.0,0.0,0.0
+Jamaica,Tales and Dragon,0,0.125,0.0,0.0,0.0
+Jersey,Merge Fever,0,0.125,0.0,0.0,0.0
+Jordan,Tales and Dragon,0,0.875,0.0,0.0,0.0
+Kenya,Tales and Dragon,0,0.375,0.0,0.0,0.0
+Kuwait,Merge HomeTown,0,0.5,0.0,0.0,0.0
+Kyrgyzstan,Merge Fever,0,4.75,0.0,0.0,0.0
+Kyrgyzstan,Tales and Dragon,0,0.375,0.0,0.0,0.0
+Liechtenstein,Merge HomeTown,0,0.125,0.0,0.0,0.0
+Lithuania,Tales and Dragon,0,1.75,0.0,0.0,0.0
+Luxembourg,Merge HomeTown,0,0.625,0.0,0.0,0.0
+Macao,Merge Fever,0,0.25,0.0,0.0,0.0
+"Macedonia, The Former Yugoslav Republic Of",Merge HomeTown,0,0.25,0.0,0.0,0.0
+Mali,Merge Fever,0,0.125,0.0,0.0,0.0
+Malta,Merge HomeTown,0,0.25,0.0,0.0,0.0
+Malta,Tales and Dragon,0,0.375,0.0,0.0,0.0
+Martinique,Tales and Dragon,0,0.125,0.0,0.0,0.0
+Mauritius,Merge HomeTown,0,1.0,0.0,0.0,0.0
+Mauritius,Tales and Dragon,0,0.375,0.0,0.0,0.0
+Moldova,Tales and Dragon,0,0.375,0.0,0.0,0.0
+Mongolia,Tales and Dragon,0,1.375,0.0,0.0,0.0
+Montenegro,Merge HomeTown,0,1.625,0.0,0.0,0.0
+Morocco,Tales and Dragon,0,0.125,0.0,0.0,0.0
+Myanmar,Tales and Dragon,0,0.375,0.0,0.0,0.0
+Namibia,Merge Fever,0,0.125,0.0,0.0,0.0
+Namibia,Merge HomeTown,0,0.25,0.0,0.0,0.0
+Namibia,Tales and Dragon,0,0.125,0.0,0.0,0.0
+Nicaragua,Merge HomeTown,0,0.75,0.0,0.0,0.0
+Nigeria,Merge HomeTown,0,0.625,0.0,0.0,0.0
+Northern Mariana Islands,Merge Fever,0,1.5,0.0,0.0,0.0
+"Palestinian Territory, Occupied",Merge HomeTown,0,0.625,0.0,0.0,0.0
+Panama,Tales and Dragon,0,0.5,0.0,0.0,0.0
+Qatar,Tales and Dragon,0,0.25,0.0,0.0,0.0
+Russia,Tales and Dragon,0,1.0,0.0,0.0,0.0
+Saint Kitts And Nevis,Merge HomeTown,0,0.125,0.0,0.0,0.0
+Saint Lucia,Merge Fever,0,1.375,0.0,0.0,0.0
+Saint Martin,Merge Fever,0,1.0,0.0,0.0,0.0
+Saint Pierre And Miquelon,Merge Fever,0,0.25,0.0,0.0,0.0
+Seychelles,Merge Fever,0,1.125,0.0,0.0,0.3107
+Sierra Leone,Merge Fever,0,1.0,0.0,0.0,0.0
+Singapore,Tales and Dragon,0,2.375,0.0,0.0,0.0
+Slovenia,Tales and Dragon,0,0.5,0.0,0.0,0.0
+South Sudan,Merge Fever,0,0.375,0.0,0.0,0.0
+Sudan,Merge Fever,0,0.75,0.0,0.0,0.0
+Tajikistan,Merge Fever,0,0.125,0.0,0.0,0.0
+Tajikistan,Tales and Dragon,0,0.125,0.0,0.0,0.0
+"Tanzania, United Republic Of",Tales and Dragon,0,0.125,0.0,0.0,0.0
+Togo,Merge Fever,0,0.125,0.0,0.0,0.0
+Tunisia,Tales and Dragon,0,1.0,0.0,0.0,0.0
+Turkmenistan,Merge Fever,0,4.625,0.0,0.0,0.0
+Uruguay,Merge HomeTown,0,3.125,0.0,0.0,0.0
+"Venezuela, Bolivarian Republic Of",Tales and Dragon,0,1.0,0.0,0.0,0.0
+Yemen,Tales and Dragon,0,0.625,0.0,0.0,0.0
+Zambia,Merge Fever,0,0.5,0.0,0.0,0.0
+Zambia,Merge HomeTown,0,0.125,0.0,0.0,0.0
