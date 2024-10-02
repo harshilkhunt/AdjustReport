@@ -7,6 +7,12 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
 
+
+if 'authentication_status' not in st.session_state or not st.session_state.authentication_status:
+    st.info("Please login from the Home page and try again.")
+    st.stop()
+
+
 today = datetime.today().date()
 today_date = today.strftime('%Y-%m-%d')
 lst_token =["f56a8zluprsw","1gymy6f2kfeo","mf30wj2dii9s"]

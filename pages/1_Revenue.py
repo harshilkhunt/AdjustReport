@@ -16,6 +16,9 @@ df_revenue['total_revenue'] = df_revenue['revenue'] + df_revenue['ad_revenue']
 df_revenue['day'] = pd.to_datetime(df_revenue['day'])
 
 
+if 'authentication_status' not in st.session_state or not st.session_state.authentication_status:
+    st.info("Please login from the Home page and try again.")
+    st.stop()
 
 
 startDate = pd.to_datetime(df_revenue["day"]).min()
