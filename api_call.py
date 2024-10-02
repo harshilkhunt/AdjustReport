@@ -5,7 +5,7 @@ from datetime import datetime, timedelta, date
 
 import streamlit
 
-# from config import BEARER_TOKEN
+
 
 
 today = datetime.today().date()
@@ -42,7 +42,7 @@ def fetch_adjust_report(tkn,date_period, dimensions, metrics,filename):
         }
 
         headers = {
-             # "Authorization": f"Bearer {BEARER_TOKEN }"
+
             "Authorization": streamlit.secrets["auth_tkn"]
         }
 
