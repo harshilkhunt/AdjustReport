@@ -2,6 +2,7 @@ import os
 import pandas as pd
 import requests
 from datetime import datetime, timedelta, date
+from config import BEARER_TOKEN
 
 
 today = datetime.today().date()
@@ -38,7 +39,7 @@ def fetch_adjust_report(tkn,date_period, dimensions, metrics,filename):
         }
 
         headers = {
-             "Authorization": "Bearer WWU3R_NVWshLX-h4yy4e"
+             "Authorization": f"Bearer {BEARER_TOKEN }"
         }
 
         response = requests.get(url, params=params, headers=headers)
@@ -50,4 +51,5 @@ def fetch_adjust_report(tkn,date_period, dimensions, metrics,filename):
         df.to_csv(file_path, index=False)
         print(f"Data saved to {file_path}")
         return df
+
 
