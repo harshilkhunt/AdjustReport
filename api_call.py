@@ -2,7 +2,10 @@ import os
 import pandas as pd
 import requests
 from datetime import datetime, timedelta, date
-from config import BEARER_TOKEN
+
+import streamlit
+
+# from config import BEARER_TOKEN
 
 
 today = datetime.today().date()
@@ -39,7 +42,8 @@ def fetch_adjust_report(tkn,date_period, dimensions, metrics,filename):
         }
 
         headers = {
-             "Authorization": f"Bearer {BEARER_TOKEN }"
+             # "Authorization": f"Bearer {BEARER_TOKEN }"
+            "Authorization": streamlit.secrets["auth_tkn"]
         }
 
         response = requests.get(url, params=params, headers=headers)
