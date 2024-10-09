@@ -126,3 +126,32 @@ with cl_3_2:
                       xaxis_title='Day',
                       yaxis_title='ecpi')
     st.plotly_chart(fig_ecpi, use_container_width=True)
+
+st.divider()
+
+
+
+cl_4_1,cl_4_2 = st.columns([1,1])
+with cl_4_1:
+    get_app = st.selectbox("Select  App", df_revenue['app'].unique())
+with cl_4_2:
+    options_cntry = st.multiselect("Select the Country", df_revenue['country'].unique(), df_revenue['country'].unique()[0])
+
+df_rev_dau  = df_revenue[(df_revenue["day"] >= date1) & (df_revenue["day"] <= date2)].copy()
+df_rev_dau =df_rev_dau[df_rev_dau['country'].isin(options_cntry) & (df_rev_dau['app'] == get_app)]
+df_rev_dau = df_rev_dau.groupby(by = 'day')[['installs','revenue','ad_revenue','cost','daus','paid_installs','total_revenue']].sum()
+df_rev_dau['Rev/Dau'] = df_rev_dau['total_revenue'] / df_rev_dau['daus']
+df_rev_dau['rolling_average'] = df_rev_dau['Rev/Dau'].rolling(window=15).mean()
+st.write(df_rev_dau)
+
+fig_4 = go.Figure()
+
+# Add first line
+fig_4.add_trace(go.Scatter(x=df_rev_dau.index, y=df_rev_dau['Rev/Dau'], mode='lines', name='Rev/Dau'))
+fig_4.add_trace(go.Scatter(x=df_rev_dau.index, y=df_rev_dau['rolling_average'], mode='lines',marker_color='orangered', name='rolling_average 15 days'))
+
+# Update layout
+fig_4.update_layout(title=f'Rev/Dau in {options_cntry}',
+                  xaxis_title='DAY',
+                  yaxis_title='Rev/Dau')
+st.plotly_chart(fig_4, use_container_width=True)
