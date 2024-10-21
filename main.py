@@ -79,4 +79,5 @@ for fls in files:
         os.remove(file_path)
         # st.write(f'file removed : {file_path}')
     else:
+        pass
         # st.write("False")
