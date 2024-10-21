@@ -71,7 +71,7 @@ files = os.listdir(directory)
 # st.write(files[0].split("_")[-1].split(".")[0])
 
 for fls in files:
-    st.write(fls.split("_")[-1].split(".")[0])
+    # st.write(fls.split("_")[-1].split(".")[0])
     write_date = fls.split("_")[-1].split(".")[0]
     dt = datetime.strptime(write_date,"%Y-%m-%d")
     if (datetime.today()-timedelta(days=1)) > dt:
