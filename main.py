@@ -23,7 +23,7 @@ credentials = {
             'email': 'jsmith@gmail.com',
             'failed_login_attempts': 0,  # Will be managed automatically
             'logged_in': False,           # Will be managed automatically
-            'name': 'John Smith',
+            'name': 'Admin',
             'password':  st.secrets['pass'],            # Will be hashed automatically
             'roles': ['admin', 'editor', 'viewer']
         }
