@@ -77,6 +77,6 @@ for fls in files:
     if (datetime.today()-timedelta(days=1)) > dt:
         file_path = os.path.join(directory, fls)
         os.remove(file_path)
-        st.write(f'file removed : {file_path}')
+        # st.write(f'file removed : {file_path}')
     else:
-        st.write("False")
+        # st.write("False")
