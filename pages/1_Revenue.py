@@ -6,12 +6,16 @@ import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
+st.set_page_config(page_title="Revenue!!!", page_icon=":bar_chart:",layout="wide")
+
 if 'authentication_status' not in st.session_state or not st.session_state.authentication_status:
     st.info("Please login from the Home page and try again.")
     st.stop()
 
 today = datetime.today().date()
+seven_day_back = datetime.today().date()-pd.Timedelta(days=7)
 today_date = today.strftime('%Y-%m-%d')
+seven_day_back_date = seven_day_back.strftime('%Y-%m-%d')
 lst_token =["f56a8zluprsw","1gymy6f2kfeo","mf30wj2dii9s"]
 df_revenue = ac.fetch_adjust_report('"f56a8zluprsw","1gymy6f2kfeo","mf30wj2dii9s"',f"2024-04-01:{today_date}", "day,country,app","installs,revenue,ad_revenue,cost,ecpi_all,daus,paid_installs,arpdau,arpdau_ad,arpdau_iap","revenue")
 df_revenue[['installs', 'revenue', 'ad_revenue', 'cost', 'ecpi_all', 'daus', 'paid_installs', 'arpdau', 'arpdau_ad','arpdau_iap']] = df_revenue[['installs', 'revenue', 'ad_revenue', 'cost', 'ecpi_all', 'daus', 'paid_installs', 'arpdau', 'arpdau_ad','arpdau_iap']].astype(float)
@@ -131,24 +135,44 @@ st.divider()
 
 
 
+
+
 cl_4_1,cl_4_2 = st.columns([1,1])
 with cl_4_1:
     get_app = st.selectbox("Select  App", df_revenue['app'].unique())
 with cl_4_2:
-    options_cntry = st.multiselect("Select the Country", df_revenue['country'].unique(), df_revenue['country'].unique()[0])
+    df_rev_lst = df_revenue[(df_revenue["day"] >= seven_day_back_date) & (df_revenue["day"] <= today_date)].copy()
+    df_rev_lst = df_rev_lst[df_rev_lst['app'] == get_app]
+    df_rev_lst = df_rev_lst.groupby('country')['cost'].mean()
+    # st.write(df_rev_lst)
+
+    df_rev_lst = pd.DataFrame(df_rev_lst)
+
+    df_rev_lst_sorted = df_rev_lst.sort_values(by='cost', ascending=False)
+    df_rev_lst_sorted = df_rev_lst_sorted.head(10)
+    cntry_lst = df_rev_lst_sorted.index.values.tolist()
+    # st.write(cntry_lst)
+    options_cntry = st.multiselect("Select the Country : By default top 10 country by spend in last 7 days", df_revenue['country'].unique(), cntry_lst)
+# st.write(df_revenue)
+
+
+
+
+
+
 
 df_rev_dau  = df_revenue[(df_revenue["day"] >= date1) & (df_revenue["day"] <= date2)].copy()
 df_rev_dau =df_rev_dau[df_rev_dau['country'].isin(options_cntry) & (df_rev_dau['app'] == get_app)]
 df_rev_dau = df_rev_dau.groupby(by = 'day')[['installs','revenue','ad_revenue','cost','daus','paid_installs','total_revenue']].sum()
 df_rev_dau['Rev/Dau'] = df_rev_dau['total_revenue'] / df_rev_dau['daus']
-df_rev_dau['rolling_average'] = df_rev_dau['Rev/Dau'].rolling(window=15).mean()
-st.write(df_rev_dau)
+df_rev_dau['rolling_average'] = df_rev_dau['Rev/Dau'].rolling(window=7).mean()
+# st.write(df_rev_dau)
 
 fig_4 = go.Figure()
 
 # Add first line
 fig_4.add_trace(go.Scatter(x=df_rev_dau.index, y=df_rev_dau['Rev/Dau'], mode='lines', name='Rev/Dau'))
-fig_4.add_trace(go.Scatter(x=df_rev_dau.index, y=df_rev_dau['rolling_average'], mode='lines',marker_color='orangered', name='rolling_average 15 days'))
+fig_4.add_trace(go.Scatter(x=df_rev_dau.index, y=df_rev_dau['rolling_average'], mode='lines',marker_color='orangered', name='rolling_average 7 days'))
 
 # Update layout
 fig_4.update_layout(title=f'Rev/Dau in {options_cntry}',
