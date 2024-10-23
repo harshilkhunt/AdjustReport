@@ -28,11 +28,12 @@ df_countrywise['cost'] = df_countrywise['cost'].astype(float)
 
 col_1_1,col_1_2 = st.columns((2))
 with col_1_1:
-    pass
-    my_slider_val = st.slider("Weekly Cost", min(df_countrywise['cost']), max(df_countrywise['cost']))
-    st.write(my_slider_val)
-with col_1_2:
     options_app = st.selectbox("Select the App", df_countrywise['app'].unique())
+
+with col_1_2:
+    df_countrywise = df_countrywise[df_countrywise['app'] == options_app]
+    my_slider_val = st.slider("Weekly Cost", min(df_countrywise['cost']), max(df_countrywise['cost']),
+                              value=(min(df_countrywise['cost'])+0.1))
 # st.write(df_countrywise)
 #
 df_filter = df_countrywise[(df_countrywise["cost"] >= my_slider_val) & (df_countrywise["app"] == options_app)].copy()
@@ -46,16 +47,16 @@ fig_1 = make_subplots(specs=[[{"secondary_y": True}]])
 fig_1.add_trace(go.Bar(x=df_filter["country"],y=df_filter["roas_d7"],name='roas_d7',text=df_filter["roas_d7"],marker_color='rosybrown'),secondary_y=False)
 
 # Add a line trace
-fig_1.add_trace(go.Scatter(x=df_filter["country"],y=df_filter["retention_rate_d7"],name='retention_rate_d7',mode='lines+markers',line=dict(color='royalblue')),secondary_y=True)
+fig_1.add_trace(go.Scatter(x=df_filter["country"],y=df_filter["cost"],name='Spend',mode='lines+markers',line=dict(color='royalblue')),secondary_y=True)
 
 # Update layout for better presentation
 fig_1.update_layout(
     title=f"Retention and Roas D7 for {options_app}",
     xaxis_title='Week',
     yaxis_title='Roas',
-    yaxis2_title='retention_d7',
+    yaxis2_title='Spend',
     barmode='group' , # This can be 'stack' or 'group' based on your preference
-    yaxis=dict(range=[0, max(df_filter["roas_d7"]) + 0.5]),
+    # yaxis2=dict(range=[0, max(df_filter["cost"])]),
 
 )
 fig_1.update_xaxes(tickmode='array', tickvals=df_filter["country"], ticktext=df_filter["country"], tickangle=45)
