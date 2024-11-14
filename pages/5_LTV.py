@@ -20,7 +20,7 @@ df_play_day = ac.fetch_adjust_report('"f56a8zluprsw","1gymy6f2kfeo","mf30wj2dii9
 df_play_day[['retention_rate_d0', 'retention_rate_d1', 'retention_rate_d2', 'retention_rate_d3', 'retention_rate_d4', 'retention_rate_d5', 'retention_rate_d6', 'retention_rate_d7']] = df_play_day[['retention_rate_d0', 'retention_rate_d1', 'retention_rate_d2', 'retention_rate_d3', 'retention_rate_d4', 'retention_rate_d5', 'retention_rate_d6', 'retention_rate_d7']].astype(float)
 
 df_play_day['playdays_d7'] = df_play_day[['retention_rate_d0', 'retention_rate_d1', 'retention_rate_d2', 'retention_rate_d3', 'retention_rate_d4', 'retention_rate_d5', 'retention_rate_d6', 'retention_rate_d7']].sum(axis=1)
-st.write(df_play_day)
+# st.write(df_play_day)
 df_ltv['start_date'] = df_ltv['week'].str.split(' - ').str[0]
 df_play_day['start_date'] = df_play_day['week'].str.split(' - ').str[0]
 # xcvcs
