@@ -16,11 +16,17 @@ today_date = today.strftime('%Y-%m-%d')
 lst_token =["f56a8zluprsw","1gymy6f2kfeo","mf30wj2dii9s"]
 df_ltv = ac.fetch_adjust_report('"f56a8zluprsw","1gymy6f2kfeo","mf30wj2dii9s"',f"2024-04-01:{today_date}","week,app,country","lifetime_value_d7,lifetime_value_d30,lifetime_value_d60","ltv")
 df_ltv_day = ac.fetch_adjust_report('"f56a8zluprsw","1gymy6f2kfeo","mf30wj2dii9s"',f"2024-04-01:{today_date}","day,app,country","lifetime_value_d1,lifetime_value_d2,lifetime_value_d3,lifetime_value_d7,lifetime_value_d14,lifetime_value_d30,lifetime_value_d60","ltv-day")
+df_play_day = ac.fetch_adjust_report('"f56a8zluprsw","1gymy6f2kfeo","mf30wj2dii9s"',f"2024-04-01:{today_date}","week,app,country","retention_rate_d0,retention_rate_d1,retention_rate_d2,retention_rate_d3,retention_rate_d4,retention_rate_d5,retention_rate_d6,retention_rate_d7","play-day")
+df_play_day[['retention_rate_d0', 'retention_rate_d1', 'retention_rate_d2', 'retention_rate_d3', 'retention_rate_d4', 'retention_rate_d5', 'retention_rate_d6', 'retention_rate_d7']] = df_play_day[['retention_rate_d0', 'retention_rate_d1', 'retention_rate_d2', 'retention_rate_d3', 'retention_rate_d4', 'retention_rate_d5', 'retention_rate_d6', 'retention_rate_d7']].astype(float)
 
+df_play_day['playdays_d7'] = df_play_day[['retention_rate_d0', 'retention_rate_d1', 'retention_rate_d2', 'retention_rate_d3', 'retention_rate_d4', 'retention_rate_d5', 'retention_rate_d6', 'retention_rate_d7']].sum(axis=1)
+st.write(df_play_day)
 df_ltv['start_date'] = df_ltv['week'].str.split(' - ').str[0]
-
+df_play_day['start_date'] = df_play_day['week'].str.split(' - ').str[0]
+# xcvcs
 # Converting to datetime format
 df_ltv['start_date'] = pd.to_datetime(df_ltv['start_date'])
+df_play_day['start_date'] = pd.to_datetime(df_play_day['start_date'])
 # df_roas['start_date'] = df_roas['start_date'].dt.date
 
 
@@ -51,27 +57,42 @@ else:
 # st.write(df_ltv)
 
 df_filter = df_ltv[(df_ltv["start_date"] >= date1) & (df_ltv["start_date"] <= date2)].copy()
+df_filter_pd = df_play_day[(df_play_day["start_date"] >= date1) & (df_play_day["start_date"] <= date2)].copy()
+
 df_filter =df_filter[(df_filter['app']==options_app) & (df_filter['country']==options_country)]
+df_filter_pd =df_filter_pd[(df_filter_pd['app']==options_app) & (df_filter_pd['country']==options_country)]
+
 df_filter['start_date'] = df_filter['start_date'].dt.date
+df_filter_pd['start_date'] = df_filter_pd['start_date'].dt.date
+
 df_filter  = df_filter.sort_values(by='start_date', ascending=True)
+df_filter_pd  = df_filter_pd.sort_values(by='start_date', ascending=True)
+
 # st.write(df_filter)
 
 st.divider()
 fig_1 = go.Figure()
+fig_1 = make_subplots(specs=[[{"secondary_y": True}]])
 
 # Add first line
-fig_1.add_trace(go.Scatter(x=df_filter['start_date'], y=df_filter['lifetime_value_d7'],  mode='lines+markers', name='LTV d7'))
+fig_1.add_trace(go.Scatter(x=df_filter['start_date'], y=df_filter['lifetime_value_d7'],  mode='lines+markers', name='LTV d7'),secondary_y=False)
 
 # Add second line
-fig_1.add_trace(go.Scatter(x=df_filter['start_date'], y=df_filter['lifetime_value_d30'], mode='lines+markers', name='LTV d30'))
+fig_1.add_trace(go.Scatter(x=df_filter['start_date'], y=df_filter['lifetime_value_d30'], mode='lines+markers', name='LTV d30'),secondary_y=False)
 
 # Add third line
-fig_1.add_trace(go.Scatter(x=df_filter['start_date'], y=df_filter['lifetime_value_d60'], mode='lines+markers', name='LTV d60'))
+fig_1.add_trace(go.Scatter(x=df_filter['start_date'], y=df_filter['lifetime_value_d60'], mode='lines+markers', name='LTV d60'),secondary_y=False)
+
+fig_1.add_trace(go.Scatter(x=df_filter_pd['start_date'], y=df_filter_pd['playdays_d7'], mode='lines+markers', name='playdays_d7'),secondary_y=True)
 
 # Update layout
 fig_1.update_layout(title=f"LTVs of {options_app} in {options_country}",
                       xaxis_title='DAY',
-                      yaxis_title='LTV usd$')
+                      yaxis_title='LTV usd$',
+                      yaxis2_title='Play days D7',
+                      yaxis=dict(range=[0, max(df_filter["lifetime_value_d60"]) + 1.5]),
+                      yaxis2=dict(range=[0, max(df_filter_pd["playdays_d7"]) + 1.5]),
+                    )
 st.plotly_chart(fig_1, use_container_width=True)
 
 
