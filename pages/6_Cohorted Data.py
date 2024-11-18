@@ -13,7 +13,7 @@ if 'authentication_status' not in st.session_state or not st.session_state.authe
     st.info("Please login from the Home page and try again.")
     st.stop()
 
-querry_strng = "installs,retention_rate_d0,retention_rate_d1,retention_rate_d7,ad_impressions_d0,ad_impressions_d1,ad_impressions_d7,ad_revenue_d0,ad_revenue_d1,ad_revenue_d7,revenue_d0,revenue_d1,revenue_d7,all_revenue_per_user_d0,all_revenue_per_user_d1,all_revenue_per_user_d7,time_spent_per_active_user_d0,time_spent_per_active_user_d1,time_spent_per_active_user_d7,roas_d0,roas_d1,roas_d7,cost"
+querry_strng = "installs,retention_rate_d0,retention_rate_d1,retention_rate_d7,ad_impressions_d0,ad_impressions_d1,ad_impressions_d7,ad_revenue_d0,ad_revenue_d1,ad_revenue_d7,revenue_d0,revenue_d1,revenue_d7,all_revenue_per_user_d0,all_revenue_per_user_d1,all_revenue_per_user_d7,all_revenue_total_per_user_d7,time_spent_per_active_user_d0,time_spent_per_active_user_d1,time_spent_per_active_user_d7,roas_d0,roas_d1,roas_d7,cost"
 today = datetime.today().date()
 today_date = today.strftime('%Y-%m-%d')
 lst_token =["f56a8zluprsw","1gymy6f2kfeo","mf30wj2dii9s"]
