@@ -14,9 +14,9 @@ if 'authentication_status' not in st.session_state or not st.session_state.authe
 today = datetime.today().date()
 today_date = today.strftime('%Y-%m-%d')
 lst_token =["f56a8zluprsw","1gymy6f2kfeo","mf30wj2dii9s"]
-df_ltv = ac.fetch_adjust_report('"f56a8zluprsw","1gymy6f2kfeo","mf30wj2dii9s"',f"2024-04-01:{today_date}","week,app,country","lifetime_value_d7,lifetime_value_d30,lifetime_value_d60","ltv")
-df_ltv_day = ac.fetch_adjust_report('"f56a8zluprsw","1gymy6f2kfeo","mf30wj2dii9s"',f"2024-04-01:{today_date}","day,app,country","lifetime_value_d1,lifetime_value_d2,lifetime_value_d3,lifetime_value_d7,lifetime_value_d14,lifetime_value_d30,lifetime_value_d60","ltv-day")
-df_play_day = ac.fetch_adjust_report('"f56a8zluprsw","1gymy6f2kfeo","mf30wj2dii9s"',f"2024-04-01:{today_date}","week,app,country","retention_rate_d0,retention_rate_d1,retention_rate_d2,retention_rate_d3,retention_rate_d4,retention_rate_d5,retention_rate_d6,retention_rate_d7","play-day")
+df_ltv = ac.fetch_adjust_report('"f56a8zluprsw","1gymy6f2kfeo","mf30wj2dii9s","x4pi8tlg9gxs"',f"2024-04-01:{today_date}","week,app,country","lifetime_value_d7,lifetime_value_d30,lifetime_value_d60","ltv")
+df_ltv_day = ac.fetch_adjust_report('"f56a8zluprsw","1gymy6f2kfeo","mf30wj2dii9s","x4pi8tlg9gxs"',f"2024-04-01:{today_date}","day,app,country","lifetime_value_d1,lifetime_value_d2,lifetime_value_d3,lifetime_value_d7,lifetime_value_d14,lifetime_value_d30,lifetime_value_d60","ltv-day")
+df_play_day = ac.fetch_adjust_report('"f56a8zluprsw","1gymy6f2kfeo","mf30wj2dii9s","x4pi8tlg9gxs"',f"2024-04-01:{today_date}","week,app,country","retention_rate_d0,retention_rate_d1,retention_rate_d2,retention_rate_d3,retention_rate_d4,retention_rate_d5,retention_rate_d6,retention_rate_d7","play-day")
 df_play_day[['retention_rate_d0', 'retention_rate_d1', 'retention_rate_d2', 'retention_rate_d3', 'retention_rate_d4', 'retention_rate_d5', 'retention_rate_d6', 'retention_rate_d7']] = df_play_day[['retention_rate_d0', 'retention_rate_d1', 'retention_rate_d2', 'retention_rate_d3', 'retention_rate_d4', 'retention_rate_d5', 'retention_rate_d6', 'retention_rate_d7']].astype(float)
 
 df_play_day['playdays_d7'] = df_play_day[['retention_rate_d0', 'retention_rate_d1', 'retention_rate_d2', 'retention_rate_d3', 'retention_rate_d4', 'retention_rate_d5', 'retention_rate_d6', 'retention_rate_d7']].sum(axis=1)

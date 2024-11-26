@@ -23,7 +23,7 @@ print(fourteendays_back)
 
 lst_token =["f56a8zluprsw","1gymy6f2kfeo","mf30wj2dii9s"]
 
-df_countrywise = ac.fetch_adjust_report('"f56a8zluprsw","1gymy6f2kfeo","mf30wj2dii9s"',f"{fourteendays_back}:{sevendays_back}","country,app","installs,daus,retention_rate_d7,roas_d7,cost","countrywise")
+df_countrywise = ac.fetch_adjust_report('"f56a8zluprsw","1gymy6f2kfeo","mf30wj2dii9s","x4pi8tlg9gxs"',f"{fourteendays_back}:{sevendays_back}","country,app","installs,daus,retention_rate_d7,roas_d7,cost","countrywise")
 df_countrywise['cost'] = df_countrywise['cost'].astype(float)
 
 col_1_1,col_1_2 = st.columns((2))

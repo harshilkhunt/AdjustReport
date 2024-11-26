@@ -17,7 +17,7 @@ seven_day_back = datetime.today().date()-pd.Timedelta(days=7)
 today_date = today.strftime('%Y-%m-%d')
 seven_day_back_date = seven_day_back.strftime('%Y-%m-%d')
 lst_token =["f56a8zluprsw","1gymy6f2kfeo","mf30wj2dii9s"]
-df_revenue = ac.fetch_adjust_report('"f56a8zluprsw","1gymy6f2kfeo","mf30wj2dii9s"',f"2024-04-01:{today_date}", "day,country,app","installs,revenue,ad_revenue,cost,ecpi_all,daus,paid_installs,arpdau,arpdau_ad,arpdau_iap","revenue")
+df_revenue = ac.fetch_adjust_report('"f56a8zluprsw","1gymy6f2kfeo","mf30wj2dii9s","x4pi8tlg9gxs"',f"2024-02-01:{today_date}", "day,country,app","installs,revenue,ad_revenue,cost,ecpi_all,daus,paid_installs,arpdau,arpdau_ad,arpdau_iap","revenue")
 df_revenue[['installs', 'revenue', 'ad_revenue', 'cost', 'ecpi_all', 'daus', 'paid_installs', 'arpdau', 'arpdau_ad','arpdau_iap']] = df_revenue[['installs', 'revenue', 'ad_revenue', 'cost', 'ecpi_all', 'daus', 'paid_installs', 'arpdau', 'arpdau_ad','arpdau_iap']].astype(float)
 df_revenue['total_revenue'] = df_revenue['revenue'] + df_revenue['ad_revenue']
 df_revenue['day'] = pd.to_datetime(df_revenue['day'])

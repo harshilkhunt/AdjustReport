@@ -8,7 +8,7 @@ from plotly.subplots import make_subplots
 
 st.set_page_config(page_title="Revenue!!!", page_icon=":bar_chart:",layout="wide")
 
-#
+
 if 'authentication_status' not in st.session_state or not st.session_state.authentication_status:
     st.info("Please login from the Home page and try again.")
     st.stop()
@@ -17,7 +17,7 @@ querry_strng = "installs,retention_rate_d0,retention_rate_d1,retention_rate_d7,a
 today = datetime.today().date()
 today_date = today.strftime('%Y-%m-%d')
 lst_token =["f56a8zluprsw","1gymy6f2kfeo","mf30wj2dii9s"]
-df = ac.fetch_adjust_report('"f56a8zluprsw","1gymy6f2kfeo","mf30wj2dii9s"',f"2024-04-01:{today_date}","day,app,country",querry_strng,"cohort")
+df = ac.fetch_adjust_report('"f56a8zluprsw","1gymy6f2kfeo","mf30wj2dii9s","x4pi8tlg9gxs"',f"2024-04-01:{today_date}","day,app,country",querry_strng,"cohort")
 df['day'] = pd.to_datetime(df['day'])
 # st.write(df)
 

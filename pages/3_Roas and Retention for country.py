@@ -14,7 +14,7 @@ if 'authentication_status' not in st.session_state or not st.session_state.authe
 today = datetime.today().date()
 today_date = today.strftime('%Y-%m-%d')
 lst_token =["f56a8zluprsw","1gymy6f2kfeo","mf30wj2dii9s"]
-df_roas_country = ac.fetch_adjust_report('"f56a8zluprsw","1gymy6f2kfeo","mf30wj2dii9s"',f"2024-04-01:{today_date}","week,app,country","retention_rate_d7,roas_d7,retention_rate_d30,roas_d30,retention_rate_d60,roas_d60,revenue,ad_revenue,cost","roas_country")
+df_roas_country = ac.fetch_adjust_report('"f56a8zluprsw","1gymy6f2kfeo","mf30wj2dii9s","x4pi8tlg9gxs"',f"2024-04-01:{today_date}","week,app,country","retention_rate_d7,roas_d7,retention_rate_d30,roas_d30,retention_rate_d60,roas_d60,revenue,ad_revenue,cost","roas_country")
 df_roas_country[['revenue', 'ad_revenue', 'cost']] = df_roas_country[['revenue', 'ad_revenue', 'cost']].astype(float)
 # Extracting the start date from the 'week' column
 df_roas_country['start_date'] = df_roas_country['week'].str.split(' - ').str[0]
