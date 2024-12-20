@@ -33,15 +33,18 @@ def fetch_adjust_report(tkn,date_period, dimensions, metrics,filename):
         print(f"The file {file_path} does not exist. Making API call...")
         url = "https://automate.adjust.com/reports-service/report"
         params = {
+             "ad_revenue_sources":"Applovin MAX SDK",
              "cost_mode": "network",
               "app_token__in": tkn,
              "date_period": date_period,
               "dimensions": dimensions,
              "metrics": metrics,
              "readable_names":"true"
+
         }
 
         headers = {
+            # "Authorization": "Bearer WWU3R_NVWshLX-h4yy4e"
 
             "Authorization": streamlit.secrets["auth_tkn"]
         }
