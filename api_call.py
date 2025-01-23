@@ -7,6 +7,7 @@ import streamlit
 
 
 
+lst_token ='"f56a8zluprsw","1gymy6f2kfeo","mf30wj2dii9s","x4pi8tlg9gxs","pjrgtt69evi8","ie60raqfubr4","nxb5aof0yhog","owuxajwx277k","i0dznwr1glxc"'
 
 today = datetime.today().date()
 formatted_date = today.strftime('%Y-%m-%d')
@@ -35,7 +36,7 @@ def fetch_adjust_report(tkn,date_period, dimensions, metrics,filename):
         params = {
              "ad_revenue_sources":"Applovin MAX SDK",
              "cost_mode": "network",
-              "app_token__in": tkn,
+              "app_token__in": lst_token,
              "date_period": date_period,
               "dimensions": dimensions,
              "metrics": metrics,
