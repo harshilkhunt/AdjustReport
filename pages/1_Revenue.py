@@ -16,8 +16,9 @@ today = datetime.today().date()
 seven_day_back = datetime.today().date()-pd.Timedelta(days=7)
 today_date = today.strftime('%Y-%m-%d')
 seven_day_back_date = seven_day_back.strftime('%Y-%m-%d')
-lst_token =["f56a8zluprsw","1gymy6f2kfeo","mf30wj2dii9s"]
-df_revenue = ac.fetch_adjust_report('"f56a8zluprsw","1gymy6f2kfeo","mf30wj2dii9s","x4pi8tlg9gxs"',f"2024-02-01:{today_date}", "day,country,app","installs,revenue,ad_revenue,cost,ecpi_all,daus,paid_installs,arpdau,arpdau_ad,arpdau_iap","revenue")
+lst_token = ac.lst_token
+st.write(lst_token)
+df_revenue = ac.fetch_adjust_report(lst_token,f"2024-02-01:{today_date}", "day,country,app","installs,revenue,ad_revenue,cost,ecpi_all,daus,paid_installs,arpdau,arpdau_ad,arpdau_iap","revenue")
 df_revenue[['installs', 'revenue', 'ad_revenue', 'cost', 'ecpi_all', 'daus', 'paid_installs', 'arpdau', 'arpdau_ad','arpdau_iap']] = df_revenue[['installs', 'revenue', 'ad_revenue', 'cost', 'ecpi_all', 'daus', 'paid_installs', 'arpdau', 'arpdau_ad','arpdau_iap']].astype(float)
 df_revenue['total_revenue'] = df_revenue['revenue'] + df_revenue['ad_revenue']
 df_revenue['day'] = pd.to_datetime(df_revenue['day'])
@@ -215,6 +216,12 @@ df_rev_dau =df_rev_dau[df_rev_dau['country'].isin(options_cntry) & (df_rev_dau['
 df_rev_dau = df_rev_dau.groupby(by = 'day')[['installs','revenue','ad_revenue','cost','daus','paid_installs','total_revenue']].sum()
 df_rev_dau['Rev/Dau'] = df_rev_dau['total_revenue'] / df_rev_dau['daus']
 df_rev_dau['rolling_average'] = df_rev_dau['Rev/Dau'].rolling(window=7).mean()
+
+df_rev_dau['Ad_Rev/Dau'] = df_rev_dau['ad_revenue'] / df_rev_dau['daus']
+df_rev_dau['rolling_average_ad'] = df_rev_dau['Ad_Rev/Dau'].rolling(window=7).mean()
+
+df_rev_dau['IAP_Rev/Dau'] = df_rev_dau['revenue'] / df_rev_dau['daus']
+df_rev_dau['rolling_average_IAP'] = df_rev_dau['IAP_Rev/Dau'].rolling(window=7).mean()
 # st.write(df_rev_dau)
 
 fig_4 = go.Figure()
@@ -228,3 +235,27 @@ fig_4.update_layout(title=f'Rev/Dau in {options_cntry}',
                   xaxis_title='DAY',
                   yaxis_title='Rev/Dau')
 st.plotly_chart(fig_4, use_container_width=True)
+
+fig_5 = go.Figure()
+
+# Add first line
+fig_5.add_trace(go.Scatter(x=df_rev_dau.index, y=df_rev_dau['Ad_Rev/Dau'], mode='lines', name='AD_Rev/Dau'))
+fig_5.add_trace(go.Scatter(x=df_rev_dau.index, y=df_rev_dau['rolling_average_ad'], mode='lines',marker_color='orangered', name='rolling_average 7 days'))
+
+# Update layout
+fig_5.update_layout(title=f'AD_Rev/Dau in {options_cntry}',
+                  xaxis_title='DAY',
+                  yaxis_title='AD_Rev/Dau')
+st.plotly_chart(fig_5, use_container_width=True)
+
+fig_6 = go.Figure()
+
+# Add first line
+fig_6.add_trace(go.Scatter(x=df_rev_dau.index, y=df_rev_dau['IAP_Rev/Dau'], mode='lines', name='IAP_Rev/Dau'))
+fig_6.add_trace(go.Scatter(x=df_rev_dau.index, y=df_rev_dau['rolling_average_IAP'], mode='lines',marker_color='orangered', name='rolling_average 7 days'))
+
+# Update layout
+fig_6.update_layout(title=f'IAP_Rev/Dau in {options_cntry}',
+                  xaxis_title='DAY',
+                  yaxis_title='IAP_Rev/Dau')
+st.plotly_chart(fig_6, use_container_width=True)
