@@ -48,9 +48,9 @@ def calculate_cost(appname,data):
     df= data[data['app'] ==appname]
     filtered_df = df[(df['day'].dt.date >= start_date) & (df['day'].dt.date <= end_date)]
     # st.write(filtered_df)
-    avg_cost = filtered_df['cost'].mean()
-    avg_d1 = filtered_df['retention_rate_d1'].mean()
-    avg_d1_roas = filtered_df['roas_d1'].mean()
+    avg_cost = filtered_df['cost'].astype(float).mean()
+    avg_d1 = filtered_df['retention_rate_d1'].astype(float).mean()
+    avg_d1_roas = filtered_df['roas_d1'].astype(float).mean()
     return avg_cost,avg_d1,avg_d1_roas
 
 def calculate_d7(appname,data):
@@ -65,8 +65,8 @@ def calculate_d7(appname,data):
     df= data[data['app'] ==appname]
     filtered_df = df[(df['day'].dt.date >= start_date) & (df['day'].dt.date <= end_date)]
     # st.write(filtered_df)
-    avg_d7 = filtered_df['retention_rate_d7'].mean()
-    avg_d7_roas = filtered_df['roas_d7'].mean()
+    avg_d7 = filtered_df['retention_rate_d7'].astype(float).mean()
+    avg_d7_roas = filtered_df['roas_d7'].astype(float).mean()
     return avg_d7,avg_d7_roas
 
 def calculate_d30(appname,data):
@@ -81,14 +81,15 @@ def calculate_d30(appname,data):
     df= data[data['app'] ==appname]
     filtered_df = df[(df['day'].dt.date >= start_date) & (df['day'].dt.date <= end_date)]
     # st.write(filtered_df)
-    avg_d30 = filtered_df['retention_rate_d7'].mean()
-    avg_d30_roas = filtered_df['roas_d7'].mean()
+    avg_d30 = filtered_df['retention_rate_d7'].astype(float).mean()
+    avg_d30_roas = filtered_df['roas_d7'].astype(float).mean()
     return avg_d30,avg_d30_roas
 
 def calculate_metrics(app_name,data):
     avg_cost, avg_d1, avg_d1_roas = calculate_cost(app_name,data)
     avg_d7, avg_d7_roas  = calculate_d7(app_name,data)
     avg_d30, avg_d30_roas = calculate_d30(app_name,data)
+
     cost = round(avg_cost,2)  # Example: cost based on app name length
     retention_rate_d1 = round(avg_d1 *100,2)  # Example calculation
     retention_rate_d7 = round(avg_d7*100,2)
@@ -102,11 +103,9 @@ def calculate_metrics(app_name,data):
 # Iterate through each row in the empty DataFrame and calculate data dynamically
 for index, row in df_data.iterrows():
     app_name = row['app']
-
     # Calculate metrics for the current app dynamically
     cost, retention_rate_d1, retention_rate_d7, retention_rate_d30, roas_d1, roas_d7, roas_d30 = calculate_metrics(
         app_name,df)
-
     # Fill the calculated values into the respective columns of the DataFrame
     df_data.at[index, 'cost'] = cost
     df_data.at[index, 'retention_rate_d1'] = retention_rate_d1
@@ -142,11 +141,9 @@ df_data_country['app'] = unique_apps_cntry
 # Iterate through each row in the empty DataFrame and calculate data dynamically
 for index, row in df_data_country.iterrows():
     app_name = row['app']
-
     # Calculate metrics for the current app dynamically
     cost, retention_rate_d1, retention_rate_d7, retention_rate_d30, roas_d1, roas_d7, roas_d30 = calculate_metrics(
         app_name,df_country)
-
     # Fill the calculated values into the respective columns of the DataFrame
     df_data_country.at[index, 'cost'] = cost
     df_data_country.at[index, 'retention_rate_d1'] = retention_rate_d1
