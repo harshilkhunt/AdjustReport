@@ -81,8 +81,8 @@ def calculate_d30(appname,data):
     df= data[data['app'] ==appname]
     filtered_df = df[(df['day'].dt.date >= start_date) & (df['day'].dt.date <= end_date)]
     # st.write(filtered_df)
-    avg_d30 = filtered_df['retention_rate_d7'].astype(float).mean()
-    avg_d30_roas = filtered_df['roas_d7'].astype(float).mean()
+    avg_d30 = filtered_df['retention_rate_d30'].astype(float).mean()
+    avg_d30_roas = filtered_df['roas_d30'].astype(float).mean()
     return avg_d30,avg_d30_roas
 
 def calculate_metrics(app_name,data):
